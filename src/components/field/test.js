@@ -28,6 +28,15 @@ it('renders value', () => {
     .toMatchSnapshot();
 });
 
+it('renders null value', () => {
+  let field = renderer
+    .create(<TextField {...props} value={null} />)
+    .toJSON();
+
+  expect(field)
+    .toMatchSnapshot();
+});
+
 it('renders disabled value', () => {
   let field = renderer
     .create(<TextField {...props} value='text' disabled />)
